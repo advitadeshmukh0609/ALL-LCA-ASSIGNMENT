@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main() {
+    int rows, cols;
+    int a[10][10], b[10][10], diff[10][10];
+
+    // 1. Input matrix dimensions
+    printf("Enter the number of rows and columns (max 10): ");
+    scanf("%d %d", &rows, &cols);
+
+    // 2. Input elements of Matrix A
+    printf("\nEnter elements of Matrix A:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("A[%d][%d]: ", i, j);
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    // 3. Input elements of Matrix B
+    printf("\nEnter elements of Matrix B:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("B[%d][%d]: ", i, j);
+            scanf("%d", &b[i][j]);
+        }
+    }
+
+    // 4. Perform subtraction (A - B)
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            diff[i][j] = a[i][j] - b[i][j];
+        }
+    }
+
+    // 5. Display the result
+    printf("\nDifference of the matrices (A - B):\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("%d\t", diff[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
